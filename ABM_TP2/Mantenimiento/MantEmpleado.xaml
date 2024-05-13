@@ -1,0 +1,29 @@
+﻿<Window x:Class="ABM_TP2.Mantenimiento.MantEmpleado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ABM_TP2.Mantenimiento"
+        mc:Ignorable="d"
+        Title="MantEmpleado" Height="423" Width="325" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFF0F0F0">
+        <Label x:Name="lblLegajo" Content="Legajo N°" HorizontalAlignment="Left" Margin="32,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="32,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="32,98,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nacimiento" HorizontalAlignment="Left" Margin="32,123,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha Alta" HorizontalAlignment="Left" Margin="32,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cargo" HorizontalAlignment="Left" Margin="32,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="Estado" HorizontalAlignment="Left" Margin="30,212,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtApellido" HorizontalAlignment="Left" Margin="108,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="108,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+        <DatePicker x:Name="dtpAlta" HorizontalAlignment="Left" Margin="108,152,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbCargoEmpleado" HorizontalAlignment="Left" Margin="108,181,0,0" VerticalAlignment="Top" Width="145"/>
+        <CheckBox x:Name="chbEstado" Content="Activo/No Activo" HorizontalAlignment="Left" Margin="108,217,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLegajo" HorizontalAlignment="Left" Margin="108,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" IsEnabled="False" Background="#FFF0F0F0" BorderBrush="#FFF0F0F0"/>
+        <DatePicker x:Name="dtpNacimiento" HorizontalAlignment="Left" Margin="108,124,0,0" VerticalAlignment="Top"/>
+        <GroupBox Height="275" Header="Registro" Margin="10,10,8,0" VerticalAlignment="Top"/>
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="44,0,0,66" Width="95" FontWeight="Bold" Height="25" VerticalAlignment="Bottom" Click="Button_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="194,0,0,66" Width="95" FontWeight="Bold" Height="25" VerticalAlignment="Bottom" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

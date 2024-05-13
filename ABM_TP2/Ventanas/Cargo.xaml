@@ -1,0 +1,21 @@
+﻿<Window x:Class="ABM_TP2.Ventanas.Cargo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ABM_TP2.Ventanas"
+        mc:Ignorable="d"
+        Title="Cargo" Height="348" Width="323" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFF0F0F0">
+        <GroupBox HorizontalAlignment="Left" Height="200" Header="Cargos" Margin="10,10,0,0" VerticalAlignment="Top" Width="305"/>
+        <TextBox x:Name="txtCodCargo" HorizontalAlignment="Left" Margin="111,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" BorderBrush="#FFF0F0F0" Background="#FFF0F0F0"/>
+        <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Margin="111,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <CheckBox x:Name="chbEstado" Content="Habilitado/Deshabilitado" HorizontalAlignment="Left" Margin="111,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Legajo N°" HorizontalAlignment="Left" Margin="34,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="Descripcion" HorizontalAlignment="Left" Margin="34,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Estado" HorizontalAlignment="Left" Margin="34,122,0,0" VerticalAlignment="Top"/>
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="57,239,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="95" Height="25" Click="Button_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="186,239,0,0" VerticalAlignment="Top" Width="95" Height="25" FontWeight="Bold" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

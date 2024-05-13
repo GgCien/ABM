@@ -1,0 +1,18 @@
+﻿<Window x:Class="ABM_TP2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ABM_TP2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="361" Width="243" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Content="Entrar" HorizontalAlignment="Center" Margin="0,0,0,67" Click="Button_Click" Width="96" FontWeight="Bold" Height="25" VerticalAlignment="Bottom"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="22,137,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="22,177,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUsuario" Margin="100,143,23,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPass" Margin="100,181,23,0" VerticalAlignment="Top" Password="********" GotFocus="txtPass_GotFocus" KeyDown="txtPass_KeyDown"/>
+        <Image Source="/Icons/usuario.png" HorizontalAlignment="Left" Height="100" Margin="72,21,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="txtResgistro" Background="Transparent" BorderBrush="Transparent" Content="No tienes una cuenta?" HorizontalAlignment="Left" Margin="10,0,0,10" Width="135" Foreground="#FF0F00FF" FontFamily="Lucida Bright" Click="txtResgistro_Click" Height="28" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

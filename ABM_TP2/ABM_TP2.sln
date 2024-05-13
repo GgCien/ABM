@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABM_TP2", "ABM_TP2.csproj", "{4C55DDC3-4E7E-4488-88A3-9B9E9A39B922}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C55DDC3-4E7E-4488-88A3-9B9E9A39B922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C55DDC3-4E7E-4488-88A3-9B9E9A39B922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C55DDC3-4E7E-4488-88A3-9B9E9A39B922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C55DDC3-4E7E-4488-88A3-9B9E9A39B922}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {543F4079-F4E6-4555-83AA-0594B2FE92B9}
+	EndGlobalSection
+EndGlobal

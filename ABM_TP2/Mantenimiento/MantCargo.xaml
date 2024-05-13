@@ -1,0 +1,22 @@
+﻿<Window x:Class="ABM_TP2.Mantenimiento.MantCargo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ABM_TP2.Mantenimiento"
+        mc:Ignorable="d"
+        Title="MantCargo" Height="341" Width="356" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFF0F0F0">
+        <Button Content="Editar" HorizontalAlignment="Left" Margin="10,0,0,33" Width="95" FontWeight="Bold" Click="Button_Click" Height="25" VerticalAlignment="Bottom"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="110,0,0,33" Width="95" FontWeight="Bold" Click="Button_Click_1" Height="25" VerticalAlignment="Bottom"/>
+        <Button Content="Salir" Margin="0,0,10,33" VerticalAlignment="Bottom" Height="25" FontWeight="Bold" Click="Button_Click_2" HorizontalAlignment="Right" Width="95"/>
+        <DataGrid x:Name="dtgCargo" BorderBrush="Black" CanUserAddRows="False" Margin="10,71,10,71" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgCargo_SelectionChanged" Background="#FF6C6C6C"/>
+        <Label Content="Cód. Cargo" Visibility="Collapsed" HorizontalAlignment="Left" Margin="68,292,0,0" VerticalAlignment="Top"/>
+        <Label Content="Descripción" HorizontalAlignment="Left" Margin="13,15,0,0" VerticalAlignment="Top"/>
+        <Label Content="Estado" HorizontalAlignment="Left" Margin="13,41,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCodCargo" Visibility="Collapsed" HorizontalAlignment="Left" Margin="146,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Margin="90,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <CheckBox x:Name="chbEstado" Content="Habilitado/Deshabilitado" HorizontalAlignment="Left" Margin="90,47,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

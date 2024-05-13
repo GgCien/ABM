@@ -1,0 +1,48 @@
+﻿<Window x:Class="ABM_TP2.Ventanas.Empleados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ABM_TP2.Ventanas"
+        mc:Ignorable="d"
+        Title="Empleados" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFF0F0F0">
+        <Menu Margin="0,0,0,395">
+            <MenuItem Header="Cargos" Click="Cargo_Click"/>
+            <MenuItem Header="Accesos" Click="MenuItem_Click" />
+            <MenuItem Header="Mantenimiento" Click="MenuItem_Click_1">
+                <MenuItem Header="Mant. Cargo" Click="MenuItem_Click_2"/>
+                <MenuItem Header="Mant. Acceso" Click="MenuItem_Click_3"/>
+            </MenuItem>
+            <MenuItem Header="Cerrar Sesión" Click="MenuItem_Click_4" />
+        </Menu>
+        <DataGrid x:Name="dtgEmpleados" BorderBrush="Black" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,217,10,40" CanUserAddRows="False" SelectionChanged="dtgEmpleados_SelectionChanged" AutoGenerateColumns="False" Background="#FF6C6C6C">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Legajo" Binding="{Binding Legajo}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Apellido" Binding="{Binding Apellido}"/>
+                <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding Nacimiento}"/>
+                <DataGridTextColumn Header="Fecha Alta" Binding="{Binding Alta}"/>
+                <DataGridTextColumn Header="Cargo" Binding="{Binding Descripcion}"/>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Nuevo" HorizontalAlignment="Left" Margin="10,0,0,10" Width="95" Height="25" VerticalAlignment="Bottom" FontWeight="Bold" Click="Button_Click"/>
+        <Button Content="Editar" Visibility="Collapsed" HorizontalAlignment="Left" Margin="110,0,0,10" Width="95" Height="25" VerticalAlignment="Bottom" FontWeight="Bold" Click="Button_Click_1"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="110,0,0,10" Width="95" Height="25" VerticalAlignment="Bottom" FontWeight="Bold" Click="Button_Click_2"/>
+        <Button Content="Salir" Margin="0,0,10,10" HorizontalAlignment="Right" Width="95" Height="25" VerticalAlignment="Bottom" FontWeight="Bold" Click="Button_Click_3"/>
+        <Image Source="/Icons/isipp-bordo.png" HorizontalAlignment="Left" Height="100" Margin="10,26,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="ISIPP 1206" HorizontalAlignment="Left" Margin="105,71,0,0" VerticalAlignment="Top" Foreground="#FF6B1414" FontSize="22" FontFamily="Bahnschrift SemiBold SemiCondensed"/>
+        <GroupBox HorizontalAlignment="Left" Height="91" Header="Buscar por" Margin="10,121,0,0" VerticalAlignment="Top" Width="248" BorderBrush="Black"/>
+        <Label Content="Legajo" HorizontalAlignment="Left" Margin="39,162,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBuscarLegajo" HorizontalAlignment="Left" Margin="85,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="txtBuscarLegajo_KeyDown"/>
+        <GroupBox HorizontalAlignment="Left" Height="91" Header="Buscar por" Margin="263,121,0,0" VerticalAlignment="Top" Width="261" BorderBrush="Black"/>
+        <Label Content="Cargo" HorizontalAlignment="Left" Margin="306,162,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbCargoBuscar" HorizontalAlignment="Left" Margin="353,164,0,0" VerticalAlignment="Top" Width="129" KeyDown="cmbCargoBuscar_KeyDown"/>
+        <Label x:Name="lblFecha" Content="" Margin="0,26,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtEliminar" HorizontalAlignment="Left" Margin="529,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" BorderBrush="White" Visibility="Collapsed"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="544,158,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="95" Height="25" Click="Button_Click_4" Visibility="Collapsed"/>
+        <Label x:Name="lblUsuario" Content="" Margin="0,52,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="280" HorizontalContentAlignment="Right"/>
+        <Image Source="/Icons/QR.png" HorizontalAlignment="Right" Height="124" Margin="0,83,12,0" VerticalAlignment="Top" Width="105"/>
+    </Grid>
+</Window>
