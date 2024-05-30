@@ -1,0 +1,25 @@
+﻿<Window x:Class="ABM_TP1.VentaRegistro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ABM_TP1"
+        mc:Ignorable="d"
+        Title="VentaRegistro" Height="346" Width="332">
+    <Grid>
+        <Button x:Name="btnConfirmar" Content="Confirmar" HorizontalAlignment="Left" Margin="74,260,0,0" VerticalAlignment="Top" Width="75" Click="btnConfirmar_Click"/>
+        <DataGrid x:Name="dtgRegistro" HorizontalAlignment="Center" Height="81" Margin="0,250,0,0" VerticalAlignment="Top" Width="256" d:ItemsSource="{d:SampleData ItemCount=5}" Visibility="Collapsed"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="105,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" PreviewKeyDown="txtNom_PreviewKeyDown"/>
+        <TextBox x:Name="txtApe" HorizontalAlignment="Left" Margin="105,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="txtNomUsu" HorizontalAlignment="Left" Margin="105,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Margin="105,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="26,69,0,0" VerticalAlignment="Top"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="26,98,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nom.Usuario" HorizontalAlignment="Left" Margin="26,126,0,0" VerticalAlignment="Top"/>
+        <Label Content="Correo" HorizontalAlignment="Left" Margin="26,153,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnVolver" Content="Cancelar" HorizontalAlignment="Left" Margin="194,260,0,0" VerticalAlignment="Top" Width="75" Click="btnVolver_Click"/>
+        <Label Content="Registro" HorizontalAlignment="Left" Height="40" Margin="23,10,0,0" VerticalAlignment="Top" Width="98" FontSize="20"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="26,181,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Margin="105,186,0,0" VerticalAlignment="Top" Width="135" KeyDown="txtPass_KeyDown"/>
+    </Grid>
+</Window>

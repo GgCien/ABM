@@ -1,0 +1,149 @@
+﻿<Window x:Class="ABM_TP1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ABM_TP1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="466" Width="845" PreviewKeyDown="Window_PreviewKeyDown">
+    <Window.Resources>
+        <Style TargetType="Window">
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="AllowsTransparency" Value="True"/>
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome CaptionHeight="0" CornerRadius="0" GlassFrameThickness="0"></WindowChrome>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <TabControl x:Name="tbc">
+        <TabItem Header="Resgistro">
+            <Grid>
+                <TextBox x:Name="txtID" Visibility="Collapsed" HorizontalAlignment="Left" Margin="361,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" PreviewKeyDown="txtID_PreviewKeyDown"/>
+                <TextBox x:Name="txtDNI" Visibility="Collapsed" HorizontalAlignment="Left" Margin="361,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" PreviewKeyDown="txtID_PreviewKeyDown"/>
+                <DatePicker x:Name="dtpFA" Visibility="Collapsed" HorizontalAlignment="Left" Margin="361,201,0,0" VerticalAlignment="Top"/>
+                <DatePicker x:Name="dtpFN" Visibility="Collapsed" HorizontalAlignment="Left" Margin="360,171,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmbCarrera" Visibility="Collapsed" HorizontalAlignment="Left" Margin="361,231,0,0" VerticalAlignment="Top" Width="145"/>
+                <CheckBox x:Name="chbEstado" Visibility="Collapsed" Content="Estado" HorizontalAlignment="Left" Margin="361,272,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="uno" Content="Legajo" Visibility="Collapsed" HorizontalAlignment="Left" Margin="315,58,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="dos" Content="DNI" Visibility="Collapsed" HorizontalAlignment="Left" Margin="330,86,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="tres" Content="Fecha de Alta" Visibility="Collapsed" HorizontalAlignment="Left" Margin="280,198,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="cuatro" Content="Fecha Nacimiento" Visibility="Collapsed" HorizontalAlignment="Left" Margin="256,169,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="cinco" Content="Carrera" Visibility="Collapsed" HorizontalAlignment="Left" Margin="312,226,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="seis" Content="Nombre" Visibility="Collapsed" HorizontalAlignment="Left" Margin="307,114,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="siete" Content="Apellido" Visibility="Collapsed" HorizontalAlignment="Left" Margin="307,142,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtNom" Visibility="Collapsed" HorizontalAlignment="Left" Margin="361,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" PreviewKeyDown="txtID_PreviewKeyDown"/>
+                <TextBox x:Name="txtApe" Visibility="Collapsed" HorizontalAlignment="Left" Margin="361,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" PreviewKeyDown="txtID_PreviewKeyDown"/>
+                <DataGrid x:Name="dtgDatos" AutoGenerateColumns="False" Background="White" BorderBrush="Black" CanUserAddRows="False" Margin="154,328,10,10" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgDatos_SelectionChanged" Visibility="Collapsed">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Legajo" Binding="{Binding ID}" Width="50"/>
+                        <DataGridTextColumn Header="DNI" Binding="{Binding DNI}" Width="100"/>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="100"/>
+                        <DataGridTextColumn Header="Apellido" Binding="{Binding Apellido}" Width="100"/>
+                        <DataGridTextColumn Header="Fecha de Nacimiento" Binding="{Binding FechaNac}" Width="100"/>
+                        <DataGridTextColumn Header="Fecha de Alta" Binding="{Binding FechaAlta}" Width="100"/>
+                        <DataGridTextColumn Header="Carrera" Binding="{Binding CodClas}" Width="100"/>
+                        <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Width="50"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="btnNuevo" HorizontalAlignment="Left" Margin="48,48,0,0" VerticalAlignment="Top" Click="btnNuevo_Click" Width="63" Height="40" Background="White" BorderBrush="White">
+                    <StackPanel>
+                        <Image Source="/Icons/agregar-archivo.png" Height="20" Width="25"/>
+                        <TextBlock TextAlignment="Center" Text="Nuevo" FontSize="12"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnGuardar" Visibility="Collapsed" HorizontalAlignment="Left" Margin="674,100,0,0" VerticalAlignment="Top" Click="btnGuardar_Click" Width="74" Background="White" BorderBrush="White">
+                    <StackPanel>
+                        <Image Source="/Icons/disquete.png" Height="20" Width="25"/>
+                        <TextBlock TextAlignment="Center" Text="Guardar"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnModificar" HorizontalAlignment="Left" Margin="42,107,0,0" VerticalAlignment="Top" Click="btnModificar_Click" Width="76" Background="White" BorderBrush="White">
+                    <StackPanel>
+                        <Image Source="/Icons/editar.png" Height="20" Width="25"></Image>
+                        <TextBlock Text="Modificar" TextAlignment="Center"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnEliminar" HorizontalAlignment="Left" Margin="42,166,0,0" VerticalAlignment="Top" Click="btnEliminar_Click" Width="76" Height="40" Background="White" BorderBrush="White">
+                    <StackPanel>
+                        <Image Source="/Icons/eliminar.png" Height="20" Width="25"/>
+                        <TextBlock TextAlignment="Center" Text="Eliminar"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnLimpiar" Visibility="Collapsed" HorizontalAlignment="Left" Margin="674,160,0,0" VerticalAlignment="Top" Click="btnLimpiar_Click" Width="75" Background="White" BorderBrush="White">
+                    <StackPanel>
+                        <Image Source="/Icons/borrador.png" Height="20" Width="25"></Image>
+                        <TextBlock TextAlignment="Center" Text="Limpiar"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnCancelar" HorizontalAlignment="Left" Margin="43,232,0,0" VerticalAlignment="Top" Click="btnCancelar_Click" Width="75" Background="White" BorderBrush="White">
+                    <StackPanel>
+                        <Image Source="/Icons/rechazar.png" Height="20" Width="25"></Image>
+                        <TextBlock Text="Cancelar" TextAlignment="Center"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <GroupBox x:Name="gpbRegistro" Visibility="Collapsed" HorizontalAlignment="Left" Height="275" Header="Formulario" Margin="209,34,0,0" VerticalAlignment="Top" Width="399"/>
+                <GroupBox HorizontalAlignment="Left" Header="Acciones" Margin="10,22,0,14" Width="139"/>
+                <GroupBox x:Name="opciones" Visibility="Collapsed" HorizontalAlignment="Left" Height="190" Header="Opciones" Margin="660,49,0,0" VerticalAlignment="Top" Width="101"/>
+                <Button x:Name="btnSalir" HorizontalAlignment="Left" Margin="65,0,0,33" VerticalAlignment="Bottom" Background="White" BorderBrush="White" Click="btnSalir_Click">
+                    <StackPanel>
+                        <Image Source="/Icons/cerrar.png" Height="20" Width="25"></Image>
+                        <TextBlock Text="Salir" TextAlignment="Center"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Label x:Name="lblUsu" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Right" Content=""/>
+                <Button x:Name="btnActualizar" Visibility="Collapsed" HorizontalAlignment="Left" Margin="53,107,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Height="38" Click="btnActualizar_Click">
+                    <StackPanel>
+                        <Image Source="/Icons/actualizar.png" Height="20" Width="25"></Image>
+                        <TextBlock TextAlignment="Center" Text="Actualizar"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <DataGrid x:Name="dtgMostrar" Background="White" AutoGenerateColumns="False" BorderBrush="Black" CanUserAddRows="False" Margin="154,10,10,10" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgMostrar_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Legajo" Binding="{Binding ID}" Width="50"/>
+                        <DataGridTextColumn Header="DNI" Binding="{Binding DNI}" Width="100"/>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="100"/>
+                        <DataGridTextColumn Header="Apellido" Binding="{Binding Apellido}" Width="100"/>
+                        <DataGridTextColumn Header="Fecha de Nacimiento" Binding="{Binding FechaNac}" Width="100"/>
+                        <DataGridTextColumn Header="Fecha de Alta" Binding="{Binding FechaAlta}" Width="100"/>
+                        <DataGridTextColumn Header="Carrera" Binding="{Binding CodClas}" Width="50"/>
+                        <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Width="50"/>
+                        <!--<DataGridTextColumn Header="Estado Alumno" Binding="{Binding a}" Width="50"/>-->
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Buscador">
+            <Grid>
+                <Button x:Name="btnBuscar" HorizontalAlignment="Left" Margin="434,73,0,0" VerticalAlignment="Top" Click="btnBuscar_Click" Width="86" Height="40" Background="White" BorderBrush="White">
+                    <StackPanel Width="64" Height="42">
+                        <Image Source="/Icons/lupa.png" Height="20" Width="28" HorizontalAlignment="Left"/>
+                        <TextBlock TextAlignment="Right" Text="Buscar" Width="36" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Button>
+                <DataGrid x:Name="dtgBuscador" AutoGenerateColumns="False" CanUserAddRows="False" Background="White" BorderBrush="Black" IsEnabled="False" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,157,10,10" Visibility="Visible">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Legajo" Binding="{Binding ID}" Width="50"/>
+                        <DataGridTextColumn Header="DNI" Binding="{Binding DNI}" Width="100"/>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="100"/>
+                        <DataGridTextColumn Header="Apellido" Binding="{Binding Apellido}" Width="100"/>
+                        <DataGridTextColumn Header="Fecha de Nacimiento" Binding="{Binding FechaNac}" Width="100"/>
+                        <DataGridTextColumn Header="Fecha de Alta" Binding="{Binding FechaAlta}" Width="100"/>
+                        <DataGridTextColumn Header="Carrera" Binding="{Binding CodClas}" Width="100"/>
+                        <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Width="50"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBox x:Name="txtDesde" IsEnabled="{Binding IsChecked, ElementName=chbBuscador}" HorizontalAlignment="Left" Margin="272,42,0,0" TextWrapping="Wrap" Text="Desde" VerticalAlignment="Top" Width="120" GotFocus="txtDesde_GotFocus"/>
+                <ComboBox x:Name="cmbBuscador" HorizontalAlignment="Left" Margin="272,74,0,0" VerticalAlignment="Top" Width="145"/>
+                <TextBox x:Name="txtHasta" IsEnabled="{Binding IsChecked, ElementName=chbBuscador}" HorizontalAlignment="Left" Margin="417,42,0,0" TextWrapping="Wrap" Text="Hasta" VerticalAlignment="Top" Width="120" GotFocus="txtHasta_GotFocus"/>
+                <CheckBox x:Name="chbBuscador" Content="Legajo" HorizontalAlignment="Left" Margin="191,43,0,0" VerticalAlignment="Top"/>
+                <Label Content="/" HorizontalAlignment="Left" Margin="397,39,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="chbBuscador2" Content="Carrera" HorizontalAlignment="Left" Margin="191,77,0,0" VerticalAlignment="Top" Checked="chbBuscador2_Checked" Unchecked="chbBuscador2_Unchecked"/>
+                <GroupBox HorizontalAlignment="Left" Height="126" Header="Buscador" Margin="142,10,0,0" VerticalAlignment="Top" Width="461"/>
+                <Label x:Name="lblUsuBuscador" Content="" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176" HorizontalContentAlignment="Right"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
